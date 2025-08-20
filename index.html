@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tabuada</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <h1>TABUADA</h1>
+        <div class="entrada">
+            <input type="number" id="input" placeholder="Digite o multiplicando">
+            <button id="botao">CALCULAR</button>
+        </div>
+        <div class="campo" id="campo"></div>
+
+        <script>
+            'use strict'
+            const input = document.getElementById('input')
+            const button = document.getElementById('botao')
+            const campo = document.getElementById('campo')
+
+            function tabuada (numero){
+
+                campo.innerHTML = ""
+                let multiplicador = 0
+
+                while(multiplicador <= 10){
+                    let resultado = document.createElement('div')
+                    resultado.innerHTML = `${numero} X ${multiplicador} = ${numero * multiplicador}`
+                    campo.appendChild(resultado)
+                    multiplicador++
+                }
+            }
+            function calcular(){
+                    let numero = parseInt(input.value)
+                    tabuada(numero)
+                }
+
+            button.addEventListener('click', calcular)
+            input.focus()
+
+        </script>
+    </div>
+</body>
+</html>
